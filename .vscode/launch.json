@@ -1,0 +1,399 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - MIS",
+            "request": "launch",
+            "mainClass": "MIS",
+            "projectName": "Sem3"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch) - Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RunnableThread<Sem1>",
+            "request": "launch",
+            "mainClass": "Thread.RunnableThread",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Repeatingfunctions<Sem1>",
+            "request": "launch",
+            "mainClass": "arrays.Repeatingfunctions",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-cl2<Sem1>",
+            "request": "launch",
+            "mainClass": "arrays.cl2",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-A8<Sem1>",
+            "request": "launch",
+            "mainClass": "ass8.A8",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Library<Sem1>",
+            "request": "launch",
+            "mainClass": "assignment2.Library",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Basic<Sem1>",
+            "request": "launch",
+            "mainClass": "basicstream.Basic",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FlieIO<Sem1>",
+            "request": "launch",
+            "mainClass": "basicstream.FlieIO",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Trialfile<Sem1>",
+            "request": "launch",
+            "mainClass": "basicstream.Trialfile",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Expression<Sem1>",
+            "request": "launch",
+            "mainClass": "data.Expression",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-PData2<Sem1>",
+            "request": "launch",
+            "mainClass": "data.PData2",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Data1<Sem1>",
+            "request": "launch",
+            "mainClass": "edu.princeton.cs.algs4.Data1",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Database<Sem1>",
+            "request": "launch",
+            "mainClass": "edu.princeton.cs.algs4.Database",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Inputval<Sem1>",
+            "request": "launch",
+            "mainClass": "edu.princeton.cs.algs4.Inputval",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-LinearRegression<Sem1>",
+            "request": "launch",
+            "mainClass": "edu.princeton.cs.algs4.LinearRegression",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Officestaff<Sem1>",
+            "request": "launch",
+            "mainClass": "hier.Officestaff",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-B<Sem1>",
+            "request": "launch",
+            "mainClass": "inter.B",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Math<Sem1>",
+            "request": "launch",
+            "mainClass": "mathfunc.Math",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Pi<Sem1>",
+            "request": "launch",
+            "mainClass": "mathfunc.Pi",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Pi$Thr<Sem1>",
+            "request": "launch",
+            "mainClass": "mathfunc.Pi$Thr",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Office<Sem1>",
+            "request": "launch",
+            "mainClass": "objects.Office",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Shapees<Sem1>",
+            "request": "launch",
+            "mainClass": "objects.Shapees",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-nigga<Sem1>",
+            "request": "launch",
+            "mainClass": "objects.nigga",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Real<Sem1>",
+            "request": "launch",
+            "mainClass": "primitives.Real",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ax8<Sem1>",
+            "request": "launch",
+            "mainClass": "t8.Ax8",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StringBuilder<Sem1>",
+            "request": "launch",
+            "mainClass": "t8.StringBuilder",
+            "projectName": "Sem1"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Array<Sem2>",
+            "request": "launch",
+            "mainClass": "arraydata.Array",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Trial<Sem2>",
+            "request": "launch",
+            "mainClass": "arraydata.Trial",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Compare<Sem2>",
+            "request": "launch",
+            "mainClass": "end_proj.Compare",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Decode<Sem2>",
+            "request": "launch",
+            "mainClass": "end_proj.Decode",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Encode2<Sem2>",
+            "request": "launch",
+            "mainClass": "end_proj.Encode2",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-FileLoader<Sem2>",
+            "request": "launch",
+            "mainClass": "end_proj.FileLoader",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ImgEnc<Sem2>",
+            "request": "launch",
+            "mainClass": "end_proj.ImgEnc",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SHA_1<Sem2>",
+            "request": "launch",
+            "mainClass": "end_proj.SHA_1",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-XOREncryption<Sem2>",
+            "request": "launch",
+            "mainClass": "end_proj.XOREncryption",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HashMap<Sem2>",
+            "request": "launch",
+            "mainClass": "hash.HashMap",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HashTable<Sem2>",
+            "request": "launch",
+            "mainClass": "hash.HashTable",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-HashTest<Sem2>",
+            "request": "launch",
+            "mainClass": "hash.HashTest",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-DoubleLinkLists<Sem2>",
+            "request": "launch",
+            "mainClass": "linklists.DoubleLinkLists",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Linklist<Sem2>",
+            "request": "launch",
+            "mainClass": "linklists.Linklist",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Stringlist<Sem2>",
+            "request": "launch",
+            "mainClass": "linklists.Stringlist",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-l1<Sem2>",
+            "request": "launch",
+            "mainClass": "linklists.l1",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Cqueue<Sem2>",
+            "request": "launch",
+            "mainClass": "queue.Cqueue",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Cqueuelist<Sem2>",
+            "request": "launch",
+            "mainClass": "queue.Cqueuelist",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Double_Queue<Sem2>",
+            "request": "launch",
+            "mainClass": "queue.Double_Queue",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-QueueDoubleLinkList<Sem2>",
+            "request": "launch",
+            "mainClass": "queue.QueueDoubleLinkList",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StackArray<Sem2>",
+            "request": "launch",
+            "mainClass": "stacks.StackArray",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StackDoubleLinkList<Sem2>",
+            "request": "launch",
+            "mainClass": "stacks.StackDoubleLinkList",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-AVLTrees<Sem2>",
+            "request": "launch",
+            "mainClass": "tree.AVLTrees",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BST_2<Sem2>",
+            "request": "launch",
+            "mainClass": "tree.BST_2",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-BinarySearchTree<Sem2>",
+            "request": "launch",
+            "mainClass": "tree.BinarySearchTree",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CBT<Sem2>",
+            "request": "launch",
+            "mainClass": "tree.CBT",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Heap<Sem2>",
+            "request": "launch",
+            "mainClass": "tree.Heap",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SetTree<Sem2>",
+            "request": "launch",
+            "mainClass": "tree.SetTree",
+            "projectName": "Sem2"
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Ttrryy<Sem2>",
+            "request": "launch",
+            "mainClass": "tree.Ttrryy",
+            "projectName": "Sem2"
+        }
+    ]
+}

@@ -69,7 +69,7 @@ public class StackArray implements Stacks {
 		s.pop();
 		// s.print();
 		StackArray q = new StackArray(10);
-		String a = "533+7*6-8*3/";
+		String a = "53+7*6-8*3/";
 		q.comp(a);
 		
 	}
