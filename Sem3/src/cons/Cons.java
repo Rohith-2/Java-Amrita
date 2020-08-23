@@ -5,8 +5,8 @@ public class Cons extends Conslist {
 	int head;
 	Conslist tail;
 	
-	//Craeting a Nil object extending ConsList
-	public static Conslist Nil = new Conslist() {
+	//Creating a Nil object extending ConsList
+	public  final static Conslist Nil = new Conslist() {
 
 		@Override
 		public int head() {
@@ -15,7 +15,7 @@ public class Cons extends Conslist {
 
 		@Override
 		public Conslist tail() {
-			return this;
+			return Nil;
 		}
 		
 	};
@@ -23,6 +23,15 @@ public class Cons extends Conslist {
 	public Cons(int head,Conslist tail) {
 		this.head = head;
 		this.tail = tail;
+	}
+	
+	public static Conslist lists(int... lists) {
+		return new Cons(lists[0],make(1, lists));
+	}
+	
+	private static Conslist make(int i,int...lists) {
+		if(i>=lists.length) return Nil;
+		else return new Cons(lists[i], make(++i, lists));
 	}
 
 	public int head() {
@@ -33,8 +42,23 @@ public class Cons extends Conslist {
 		return tail;
 	}
 	
+	@Override
 	public boolean isEmpty() {
 		return false;
+	}
+	
+	@Override
+	public void print() {
+		System.out.print(head+" ");
+		//Tail is also a conslist so it keeps recursive.
+		tail.print();
+	}
+	public static void main(String[] args) {
+		Cons a = new Cons(4,new Cons(3,new Cons(2,new Cons(1,Nil))));
+		a.print();
+		System.out.println(" ");
+		Conslist b = Cons.lists(1,2,3,4,5,6,7,8,9,10);
+		b.print();
 	}
 	 
 }
