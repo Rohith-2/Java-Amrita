@@ -1,18 +1,19 @@
 package consset;
+@SuppressWarnings({"unchecked","rawtypes"})
+public class NonEmpty<T extends Comparable<T>> extends ConsSet<T> {
 
-public class NonEmpty extends Set {
-
-	int key;
-	Set left;
-	Set right;
+	T key;
+	ConsSet<T> left;
+	ConsSet<T> right;
 	
-	static Set Empty = new Set() {
+	static ConsSet<Comparable<Object>> Empty = new ConsSet<Comparable<Object>>() {
 
 		@Override
-		public boolean has(int key) {return false;}
+		public boolean has(Comparable<Object> key) {return false;}
 
+		
 		@Override
-		public Set add(int key) {return new NonEmpty(this, key, this);}
+		public ConsSet add(Comparable<Object> key) {return new NonEmpty(this, key, this);}
 		
 		@Override
 		public String toString() {
@@ -21,23 +22,33 @@ public class NonEmpty extends Set {
 		
 	};
 	
-	public NonEmpty(Set l,int k, Set r) {
-		key=k;
+	public ConsSet<T> getEmpty() {
+		return (ConsSet<T>) Empty;
+	}
+	
+	public NonEmpty(T key2) {
+		key=key2;
+		left=getEmpty();
+		right=getEmpty();
+	}
+	
+	public NonEmpty(ConsSet<T> l,T key2, ConsSet<T> r) {
+		key=key2;
 		left=l;
 		right=r;
 	}
 	
 	@Override
-	public boolean has(int k) {
-		if(k<key) return left.has(k);
-		else if(k>key) return right.has(k);
+	public boolean has(T k) {
+		if(k.compareTo(key) < 0) return left.has(k);
+		else if(k.compareTo(key) > 0) return right.has(k);
 		return true;
 	}
 
 	@Override
-	public Set add(int k) {
-		if(k<key) return new NonEmpty(left.add(k), key, right);
-		else if(k>key) return new NonEmpty(left, key, right.add(k));;
+	public ConsSet<T> add(T k) {
+		if(k.compareTo(key) < 0) return new NonEmpty<T>(left.add(k), key, right);
+		else if(k.compareTo(key) > 0) return new NonEmpty<T>(left, key, right.add(k));;
 		return this;
 	}
 	
@@ -48,21 +59,21 @@ public class NonEmpty extends Set {
 	}
 	
 	public static void main(String[] args) {
-		Set s = new NonEmpty(Empty, 5, Empty);
+		ConsSet s = new NonEmpty(5);
 		System.out.println(s);
-		Set s1 = s.add(3);
+		ConsSet s1 = s.add(3);
 		System.out.println(s1);
-		Set s2 = s1.add(7);
+		ConsSet s2 = s1.add(7);
 		System.out.println(s2);
-		Set s3 = s2.add(2);
+		ConsSet s3 = s2.add(2);
 		System.out.println(s3);
-		Set s4 = s3.add(4);
+		ConsSet s4 = s3.add(4);
 		System.out.println(s4);
-		Set s5 = s4.add(6);
+		ConsSet s5 = s4.add(6);
 		System.out.println(s5);
-		Set s6 = s5.add(8);
+		ConsSet s6 = s5.add(8);
 		System.out.println(s6);
-		Set s7 = s6.add(1);
+		ConsSet s7 = s6.add(1);
 		System.out.println(s7);	
 	}
 	
