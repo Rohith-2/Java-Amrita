@@ -41,18 +41,15 @@ public class MatrixGraph implements Graph {
 				taken[u]=true;
 				
 				for(int v=0;v<V;v++) {
-					if(graph[u][v]!=0 && !taken[v]) {
-						if(dist[v]>graph[u][v] + dist[u]) dist[v]=graph[u][v] + dist[u];
-							
-					}
+					if(graph[u][v]!=0 && !taken[v] && dist[v]>graph[u][v] + dist[u]) 
+							dist[v]=graph[u][v] + dist[u];	
 				}
 			}
 			return dist;	
 		}
-		
+		 
 		@Override
 		public int[] mst() {
-			// TODO Auto-generated method stub
 			return null;
 		}
 		
