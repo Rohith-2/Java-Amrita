@@ -25,6 +25,12 @@ public class MatrixGraph implements Graph {
 			return minIndex;
 		}
 		
+		/*
+		 * Refer-Concept : https://amritavishwavidyapeetham-my.sharepoint.com/:v:/r/personal/m_vijaykrishna_cb_amrita_edu/Documents/19AIE203/Videos/VKM-19AIE203-DS2-VX3-Graph-Dijkstras.mp4?csf=1&web=1&e=AmS0PR
+		 * 
+		 * Refer-Code_Implementation : https://amritavishwavidyapeetham-my.sharepoint.com/:v:/r/personal/m_vijaykrishna_cb_amrita_edu/Documents/19AIE203/Videos/VKM-19AIE203-DS2-VX5-Graph-Matrix-Implementation.mp4?csf=1&web=1&e=eVqLCf
+		 */
+		
 		public int[] dijkstras(int src) {
 			int[] dist=new int[V];
 			boolean[] taken = new boolean[V];
@@ -47,6 +53,12 @@ public class MatrixGraph implements Graph {
 			}
 			return dist;	
 		}
+		
+		/*
+		 * Refer-Concept : https://amritavishwavidyapeetham-my.sharepoint.com/:v:/g/personal/m_vijaykrishna_cb_amrita_edu/EZFWrKBzo1xEqG_WdmK4T1MBJdXfmZC3mPKzHAgJMLHR2g?e=s6HWGT
+		 * 
+		 * Refer-Code_Implementation : -
+		 */
 		 
 		@Override
 		public int[] mst() {
