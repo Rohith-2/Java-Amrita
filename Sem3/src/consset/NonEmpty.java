@@ -1,4 +1,5 @@
 package consset;
+
 @SuppressWarnings({"unchecked","rawtypes"})
 public class NonEmpty<T extends Comparable<T>> extends ConsSet<T> {
 
