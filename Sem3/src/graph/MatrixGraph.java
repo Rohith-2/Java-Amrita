@@ -1,7 +1,5 @@
 package graph;
 
-import com.sun.source.tree.ParenthesizedTree;
-
 public class MatrixGraph implements Graph {
 
 		int [][]graph;
@@ -37,7 +35,7 @@ public class MatrixGraph implements Graph {
 			int[] dist=new int[V];
 			boolean[] taken = new boolean[V];
 			
-			for(int i=0;i<V;i++) {
+			for(int i=0;i<V-1;i++) {
 				dist[i]=Integer.MAX_VALUE;
 				taken[i]=false;
 			}
@@ -90,22 +88,28 @@ public class MatrixGraph implements Graph {
 			return parent;
 		}
 		
+		public void print_mst(int[][] adMatrix) {
+			System.err.println("Link  Key");
+			int[] mst = mst();
+			for(int i = 1; i < mst.length;i++)System.out.println(mst[i]+"->"+i+" : "+adMatrix[i][mst[i]]);
+		}
+		
 		public static void main(String[] args) {
 		int[][] adMatrix= {
 				{0, 5,  0,  0,  0,  4,  0},
 				{5, 0, 10,  0,  0,  0,  0},
-				{0, 10, 0,  7, 12,  0,  9},
+				{0, 10, 0,  7, 12,  0,  0},
 				{0, 0,  7,  0, 21,  0,  9},
 				{0, 0, 12, 21,  0,  1,  0},
 				{4, 0,  0,  0,  1,  0, 11},
 				{0, 0,  0,  9,  0, 11,  0}
 		};
 			Graph g = new MatrixGraph(adMatrix); 	
+			/*
 			int[] spDist = g.sssp(0);
-			//for(int i = 0; i < spDist.length;i++)System.out.println(i+"->"+spDist[i]);
-			
-			int[] mst = g.mst();
-			for(int i = 1; i < mst.length;i++)System.out.println(mst[i]+"->"+i+"->"+adMatrix[i][mst[i]]);
+			for(int i = 0; i < spDist.length;i++)System.out.println(i+"->"+spDist[i]);
+			*/
+			g.print_mst(adMatrix);
 			
 		}
 

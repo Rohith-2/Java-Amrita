@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MatrixGraph",
+            "request": "launch",
+            "mainClass": "graph.MatrixGraph",
+            "projectName": "Sem3"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - MIS",
             "request": "launch",
             "mainClass": "MIS",
