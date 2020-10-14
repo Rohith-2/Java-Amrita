@@ -1,5 +1,7 @@
 package graph;
 
+import com.sun.source.tree.ParenthesizedTree;
+
 public class MatrixGraph implements Graph {
 
 		int [][]graph;
@@ -57,12 +59,35 @@ public class MatrixGraph implements Graph {
 		/*
 		 * Refer-Concept : https://amritavishwavidyapeetham-my.sharepoint.com/:v:/g/personal/m_vijaykrishna_cb_amrita_edu/EZFWrKBzo1xEqG_WdmK4T1MBJdXfmZC3mPKzHAgJMLHR2g?e=s6HWGT
 		 * 
-		 * Refer-Code_Implementation : -
+		 * Refer-Code_Implementation : Self
 		 */
 		 
 		@Override
 		public int[] mst() {
-			return null;
+			int[] parent = new int[V];
+			int[] key = new int[V];
+			boolean[] taken = new boolean[V];
+			
+			for(int i=0;i<V;i++) {
+				key[i]=Integer.MAX_VALUE;
+				taken[i]=false;
+			}
+			
+			key[0]=0;
+			parent[0]=-1;
+			
+			for(int i=0;i<V-1;i++) {
+				int u = minimize(key, taken);
+				taken[u]=true;
+				
+				for(int v=0;v<V;v++) {
+					if(graph[u][v]!=0 && !taken[v] && key[v]>graph[u][v]) {
+						parent[v] = u;
+						key[v]=graph[u][v];	
+					}
+				}
+			}
+			return parent;
 		}
 		
 		public static void main(String[] args) {
@@ -77,7 +102,11 @@ public class MatrixGraph implements Graph {
 		};
 			Graph g = new MatrixGraph(adMatrix); 	
 			int[] spDist = g.sssp(0);
-			for(int i = 0; i < spDist.length;i++)System.out.println(i+"->"+spDist[i]);
+			//for(int i = 0; i < spDist.length;i++)System.out.println(i+"->"+spDist[i]);
+			
+			int[] mst = g.mst();
+			for(int i = 1; i < mst.length;i++)System.out.println(mst[i]+"->"+i+"->"+adMatrix[i][mst[i]]);
+			
 		}
 
 		
