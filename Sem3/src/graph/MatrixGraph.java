@@ -2,7 +2,7 @@ package graph;
 
 public class MatrixGraph implements Graph {
 
-		int [][]graph;
+		int[][] graph;
 		int V;
 		
 		public MatrixGraph(int[][]g) {
@@ -58,17 +58,18 @@ public class MatrixGraph implements Graph {
 		 * Refer-Concept : https://amritavishwavidyapeetham-my.sharepoint.com/:v:/g/personal/m_vijaykrishna_cb_amrita_edu/EZFWrKBzo1xEqG_WdmK4T1MBJdXfmZC3mPKzHAgJMLHR2g?e=s6HWGT
 		 * 
 		 * Refer-Code_Implementation : Self
+		 * 
 		 */
-		 
+		
 		@Override
 		public int[] mst() {
-			int[] parent = new int[V];
-			int[] key = new int[V];
+			int[] parent = new int[V],key = new int[V];
 			boolean[] taken = new boolean[V];
 			
-			for(int i=0;i<V;i++) {
-				key[i]=Integer.MAX_VALUE;
+			for(int i =0;i<V;i++) {
+				key[i] = Integer.MAX_VALUE;
 				taken[i]=false;
+				parent[i]=-1;
 			}
 			
 			key[0]=0;
@@ -80,38 +81,44 @@ public class MatrixGraph implements Graph {
 				
 				for(int v=0;v<V;v++) {
 					if(graph[u][v]!=0 && !taken[v] && key[v]>graph[u][v]) {
-						parent[v] = u;
-						key[v]=graph[u][v];	
+						key[v]=graph[u][v];
+						parent[v]=u;
 					}
 				}
 			}
 			return parent;
+			
 		}
 		
 		public void print_mst(int[][] adMatrix) {
 			System.err.println("Link  Key");
-			int[] mst = mst();
-			for(int i = 1; i < mst.length;i++)System.out.println(mst[i]+"->"+i+" : "+adMatrix[i][mst[i]]);
+			int[] mst=mst();
+			for(int i=1;i<V;i++) System.out.println(mst[i]+"->"+i+" : "+adMatrix[i][mst[i]]);
 		}
+	
 		
 		public static void main(String[] args) {
-		int[][] adMatrix= {
-				{0, 5,  0,  0,  0,  4,  0},
-				{5, 0, 10,  0,  0,  0,  0},
-				{0, 10, 0,  7, 12,  0,  0},
-				{0, 0,  7,  0, 21,  0,  9},
-				{0, 0, 12, 21,  0,  1,  0},
-				{4, 0,  0,  0,  1,  0, 11},
-				{0, 0,  0,  9,  0, 11,  0}
-		};
+			int[][] adMatrix= {
+					{0, 5,  0,  0,  0,  4,  0},
+					{5, 0, 10,  0,  0,  0,  0},
+					{0, 10, 0,  7, 12,  0,  0},
+					{0, 0,  7,  0, 21,  0,  9},
+					{0, 0, 12, 21,  0,  1,  0},
+					{4, 0,  0,  0,  1,  0, 11},
+					{0, 0,  0,  9,  0, 11,  0}
+			};
 			Graph g = new MatrixGraph(adMatrix); 	
 			/*
 			int[] spDist = g.sssp(0);
 			for(int i = 0; i < spDist.length;i++)System.out.println(i+"->"+spDist[i]);
 			*/
+			
 			g.print_mst(adMatrix);
 			
+			
 		}
+
+		
 
 		
 }
