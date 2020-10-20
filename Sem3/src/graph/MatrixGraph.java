@@ -4,6 +4,7 @@ public class MatrixGraph implements Graph {
 
 		int[][] graph;
 		int V;
+		int r = 0;
 		
 		public MatrixGraph(int[][]g) {
 			graph=g;
@@ -67,15 +68,14 @@ public class MatrixGraph implements Graph {
 			boolean[] taken = new boolean[V];
 			
 			for(int i =0;i<V;i++) {
-				key[i] = Integer.MAX_VALUE;
 				taken[i]=false;
+				key[i]=Integer.MAX_VALUE;
 				parent[i]=-1;
 			}
+		
+			key[r]=0;
 			
-			key[0]=0;
-			parent[0]=-1;
-			
-			for(int i=0;i<V-1;i++) {
+			for(int i =0;i<V-1;i++) {
 				int u = minimize(key, taken);
 				taken[u]=true;
 				
@@ -90,10 +90,12 @@ public class MatrixGraph implements Graph {
 			
 		}
 		
+		@Override
 		public void print_mst(int[][] adMatrix) {
 			System.err.println("Link  Key");
-			int[] mst=mst();
-			for(int i=1;i<V;i++) System.out.println(mst[i]+"->"+i+" : "+adMatrix[i][mst[i]]);
+			int[] mst = mst();
+			for(int i = 1;i<V;i++)
+				if(i!=r)System.out.println(mst[i]+"->"+i+" : "+adMatrix[i][mst[i]]);
 		}
 	
 		
