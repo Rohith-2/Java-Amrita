@@ -39,6 +39,16 @@ public class Cons<T> extends Conslist<T>{
 		public Conslist<KVPair<String, Integer>> reverse() {
 			return null;
 		}
+
+		@Override
+		public int whereAll(String k) {
+			return 0;
+		}
+
+		@Override
+		public Conslist<KVPair<String, Integer>> Map_Key(HasFilter h) {
+			return null;
+		}
 	};
 
 	public Cons(KVPair<String,Integer> head,Conslist<KVPair<String,Integer>> tail) {
@@ -87,8 +97,19 @@ public class Cons<T> extends Conslist<T>{
 	  }
 	  
 	  public KVPair<String, Integer> where(String k) { 
-		  if(k.compareTo(head.key) != 0) return tail.where(k); 
+		  if(k.compareTo(head.key) != 0) return ((Conslist<KVPair<String, Integer>>)tail).where(k); 
 		  return head; 
+	  }
+	  
+	 @SuppressWarnings("unchecked")
+	public int whereAll(String k) {
+		  int i=0;
+		  Conslist<KVPair<String, Integer>> thisList = (Conslist<KVPair<String, Integer>>) this;
+		  while(thisList!=Nil) {
+			  if(k.compareTo(((Cons<KVPair<String, Integer>>)thisList).head.key)==0) i+=1;
+				thisList = ((Cons<KVPair<String, Integer>>)thisList).tail; 
+		  }
+		  return i;
 	  }
 	 
 
@@ -98,11 +119,11 @@ public class Cons<T> extends Conslist<T>{
 			Conslist<KVPair<String, Integer>> newList = (Conslist<KVPair<String, Integer>>) Nil;
 			while(thisList != Nil) {
 				if(!(newList.has(((Cons<KVPair<String, Integer>>)thisList).head.key))) {
-					//System.out.println(((Cons<KVPair<String, Integer>>)thisList).head.key +" "+ "IF");
+					//System.out.println(((Cons<KVPair<String, Integer>>)thisList).head.key +"->"+ "IF");
 					newList = new Cons<KVPair<String, Integer>>(((Cons<KVPair<String, Integer>>)thisList).head,newList);
 				}
 				else {
-					//System.out.println(((Cons<KVPair<String, Integer>>)thisList).head.key +" "+"ELSE");
+					//System.out.println(((Cons<KVPair<String, Integer>>)thisList).head.key +"->"+"ELSE");
 					KVPair<String, Integer> a = ((Cons<KVPair<String, Integer>>)newList).where(((Cons<KVPair<String, Integer>>)newList).head.key);
 					((Cons<KVPair<String, Integer>>)newList).head= new KVPair<String, Integer>(((KVPair<String, Integer>)a).key,((KVPair<String, Integer>)a).value+1);
 				}
@@ -110,6 +131,13 @@ public class Cons<T> extends Conslist<T>{
 			}
 			return newList.reverse();
 		}
+	
+	public Conslist<KVPair<String, Integer>> Map_Key(HasFilter H){
+		return Map_ReduceByKey(H);
+	}
+	public Conslist<KVPair<String, Integer>> Map_ReduceByKey(HasFilter H) {
+		return new Cons<KVPair<String, Integer>>(H.lambda(head),tail.Map_ReduceByKey(H)); 	
+	}
 
 	@Override
 	public String toString() {

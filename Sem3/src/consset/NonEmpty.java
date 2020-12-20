@@ -49,7 +49,7 @@ public class NonEmpty<T extends Comparable<T>> extends ConsSet<T> {
 	@Override
 	public ConsSet<T> add(T k) {
 		if(k.compareTo(key) < 0) return new NonEmpty<T>(left.add(k), key, right);
-		else if(k.compareTo(key) > 0) return new NonEmpty<T>(left, key, right.add(k));;
+		else if(k.compareTo(key) > 0) return new NonEmpty<T>(left, key, right.add(k));
 		return this;
 	}
 	

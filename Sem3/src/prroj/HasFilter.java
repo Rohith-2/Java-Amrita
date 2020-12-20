@@ -1,5 +1,5 @@
 package prroj;
 
 public interface HasFilter {
-	public int lambda (String e);
+	public KVPair<String, Integer> lambda (KVPair<String, Integer> e);
 }
